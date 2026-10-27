@@ -1,0 +1,54 @@
+{
+  "users": [
+    {
+      "id": "8a283b31-4bb9-471b-94bc-3a869395904d",
+      "email": "asanrustamov49@gmail.com",
+      "passwordHash": "$2b$10$Wlah1SbVC2bs5Ws.vdKtMu4DJQTUpuZbnLy7qpSoSPaaIY3pRDpeG",
+      "createdAt": "2026-10-07T08:57:59.465Z"
+    },
+    {
+      "id": "12de11ac-fd33-4bcd-a0e4-f32fc08d372f",
+      "email": "asan232011@gmail.com",
+      "passwordHash": "$2b$10$L3uxynv/kMueCw8g/SOkeu/w7usbfvxqoyIu76zJgWefvPapnKGHq",
+      "createdAt": "2026-10-07T10:18:57.133Z"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "58251e04-d560-4125-b5d7-03b96660a66e",
+      "title": "Работа с ИИ",
+      "description": "Поставить новые скиллы на Claude Code, Codex, Chat GPT, Kimi и другим. Скачать и установить на ноутбук новые ИИ инструменты и агенты для быстрого создания веб сервисов и сайтов",
+      "priority": "high",
+      "category": "Работа",
+      "userId": "8a283b31-4bb9-471b-94bc-3a869395904d",
+      "createdAt": "2026-10-07T09:59:10.050Z"
+    },
+    {
+      "id": "50168e40-fb8f-410a-be2c-4381d814e399",
+      "title": "помидор",
+      "description": "купить помидоры по 2 сом",
+      "priority": "low",
+      "category": "дом",
+      "userId": "8a283b31-4bb9-471b-94bc-3a869395904d",
+      "createdAt": "2026-10-07T10:02:32.270Z"
+    },
+    {
+      "id": "b47e2227-63d0-4bf9-a5f7-4784fde49607",
+      "title": "Работа с КЛАУД",
+      "description": "купить клауд код про макс на 200 долларов и сделать сайт с 3д анимацией на тысяч долларов",
+      "priority": "high",
+      "category": "работа",
+      "userId": "12de11ac-fd33-4bcd-a0e4-f32fc08d372f",
+      "createdAt": "2026-10-08T01:36:16.222Z"
+    },
+    {
+      "id": "d6d502d6-d223-44ff-b381-f7bce1357954",
+      "title": "скиллы",
+      "description": "запустить скачать и установить новые скиллы на клауд код такие как Context engineering, ui/ux pro max, framer motion и другие",
+      "priority": "medium",
+      "category": "ии",
+      "userId": "12de11ac-fd33-4bcd-a0e4-f32fc08d372f",
+      "createdAt": "2026-10-08T01:38:06.447Z"
+    }
+  ]
+}
