@@ -34,9 +34,6 @@ const createTaskSchema = z.object({
 const updateTaskSchema = z
   .object({ title, description, priority, category })
   .partial();
-
-// Параметры GET /api/tasks?page=1&limit=10&search=...&priority=high&category=Работа&sort=newest
-// Параметры в адресе всегда приходят строками, z.coerce.number() превращает их в числа.
 const listQuerySchema = z.object({
   page: z.coerce.number().int().min(1).default(1),
   limit: z.coerce.number().int().min(1).max(100).default(10),
