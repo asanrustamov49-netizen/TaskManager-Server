@@ -1,8 +1,4 @@
-// Точка входа сервера: подключает middleware и маршруты, затем запускает Express.
-//
-// Путь запроса: routes/ (какой адрес → какой обработчик)
-//            → controllers/ (проверка данных, ответ)
-//            → services/ (логика и работа с базой)
+
 
 import cookieParser from "cookie-parser";
 import cors from "cors";
