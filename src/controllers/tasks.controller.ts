@@ -1,21 +1,22 @@
-
 import type { Request, Response } from "express";
 import { z } from "zod";
 import * as tasksService from "../services/tasks.service.js";
-
-// Правила для полей задачи. Те же правила продублированы на фронтенде
-// в frontend/src/features/tasks/schemas.ts — меняйте их вместе.
 const title = z
   .string()
   .trim()
   .min(1, "Название не должно быть короче 3 символов")
   .max(200, "Название не должно быть длиннее 200 символов");
 
-const description = z.string().trim().max(5000, "Описание должно быть не длиннее 5000 символов");
+const description = z
+  .string()
+  .trim()
+  .max(5000, "Описание должно быть не длиннее 5000 символов");
 
-const priority = z.enum(["low", "medium", "high"], "Приоритет должен быть low, medium или high");
+const priority = z.enum(
+  ["low", "medium", "high"],
+  "Приоритет должен быть или low или medium или high",
+);
 
-// Пустая строка превращается в null, то есть «без категории».
 const category = z
   .string()
   .trim()
@@ -33,7 +34,9 @@ const createTaskSchema = z.object({
 });
 
 // Тело PATCH /api/tasks/:id: те же поля, но все необязательные.
-const updateTaskSchema = z.object({ title, description, priority, category }).partial();
+const updateTaskSchema = z
+  .object({ title, description, priority, category })
+  .partial();
 
 // Параметры GET /api/tasks?page=1&limit=10&search=...&priority=high&category=Работа&sort=newest
 // Параметры в адресе всегда приходят строками, z.coerce.number() превращает их в числа.
