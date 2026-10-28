@@ -11,8 +11,8 @@ import { tasksRouter } from "./routes/tasks.routes.js";
 const app = express();
 
 app.use(cors({ origin: config.clientOrigin, credentials: true }));
-app.use(express.json()); // разбирает JSON из тела запроса в req.body
-app.use(cookieParser()); // разбирает cookie в req.cookies
+app.use(express.json());
+app.use(cookieParser()); 
 
 app.get("/api/health", (_req, res) => {
   res.json({ ok: true });
