@@ -1,6 +1,3 @@
-// Обработчики запросов /api/tasks.
-// Контроллер проверяет входные данные через Zod, вызывает сервис и отправляет ответ.
-// Если Zod находит ошибку, он бросает ZodError, и middleware/error.ts отвечает 400.
 
 import type { Request, Response } from "express";
 import { z } from "zod";
@@ -11,8 +8,8 @@ import * as tasksService from "../services/tasks.service.js";
 const title = z
   .string()
   .trim()
-  .min(1, "Введите название")
-  .max(200, "Название должно быть не длиннее 200 символов");
+  .min(1, "Название не должно быть короче 3 символов")
+  .max(200, "Название не должно быть длиннее 200 символов");
 
 const description = z.string().trim().max(5000, "Описание должно быть не длиннее 5000 символов");
 
