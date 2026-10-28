@@ -24,8 +24,6 @@ const category = z
   .nullable()
   .transform((value) => value || null);
 
-// Тело POST /api/tasks. Обязательно только название, остальное получает значения по умолчанию.
-// Лишние поля (id, userId, createdAt) Zod выбрасывает, поэтому клиент не может их подменить.
 const createTaskSchema = z.object({
   title,
   description: description.default(""),
