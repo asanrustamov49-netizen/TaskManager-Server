@@ -31,7 +31,6 @@ const createTaskSchema = z.object({
   category: category.default(null),
 });
 
-// Тело PATCH /api/tasks/:id: те же поля, но все необязательные.
 const updateTaskSchema = z
   .object({ title, description, priority, category })
   .partial();
