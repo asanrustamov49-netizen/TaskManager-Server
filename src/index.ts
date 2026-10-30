@@ -1,5 +1,3 @@
-
-
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import express from "express";
@@ -21,7 +19,6 @@ app.get("/api/health", (_req, res) => {
 app.use("/api/auth", authRouter);
 app.use("/api/tasks", tasksRouter);
 
-// Обработчик ошибок подключается последним.
 app.use(errorHandler);
 
 app.listen(config.port, () => {
