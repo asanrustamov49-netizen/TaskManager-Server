@@ -1,6 +1,7 @@
 import type { Request, Response } from "express";
 import { z } from "zod";
 import * as tasksService from "../services/tasks.service.js";
+
 const title = z
   .string()
   .trim()
@@ -46,7 +47,7 @@ const listQuerySchema = z.object({
 export async function list(req: Request, res: Response) {
   const query = listQuerySchema.parse(req.query);
   const result = await tasksService.listTasks(req.userId!, query);
-  res.json(result); // { tasks: [...], pagination: { page, limit, total, totalPages } }
+  res.json(result); 
 }
 
 export async function categories(req: Request, res: Response) {
@@ -68,5 +69,5 @@ export async function update(req: Request<{ id: string }>, res: Response) {
 
 export async function remove(req: Request<{ id: string }>, res: Response) {
   await tasksService.deleteTask(req.userId!, req.params.id);
-  res.status(204).end(); // 204 — успешно, тело ответа пустое
+  res.status(204).end(); 
 }
